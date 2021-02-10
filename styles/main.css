@@ -1,0 +1,13 @@
+.form-section {
+  border: 1px solid black;
+}
+
+.form-section-header {
+  background-color: black;
+  color: white;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: row;
+}
