@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="styles/main.css">
 
     <script defer src="scripts/bootstrap.bundle.min.js"></script>
-    <script defer src="scripts/main.js"></script>
+    <script defer src="scripts/password-visibility.js"></script>
+    <script defer src="scripts/validation.js"></script>
   </head>
 
   <body>
@@ -36,9 +37,21 @@
             <input type="text" class="form-control" id="motd" placeholder>
             <label for="motd" class="form-label">banner motd</label>
           </div>
+          <div class="mb-3 form-field form-floating">
+            <input type="text" class="form-control" id="ipDefaultGateway" placeholder>
+            <label for="ipDefaultGateway" class="form-label">ip default-gateway</label>
+          </div>
           <div class="form-field form-check form-switch">
             <input type="checkbox" class="form-check-input" id="isPswEncrypted" checked>
             <label for="isPswEncrypted" class="form-check-label">service password-encryption</label>
+          </div>
+          <div class="form-field form-check form-switch">
+            <input type="checkbox" class="form-check-input" id="isNoIpLookup" checked>
+            <label for="isNoIpLookup" class="form-check-label">no ip domain lookup</label>
+          </div>
+          <div class="form-field form-check form-switch">
+            <input type="checkbox" class="form-check-input" id="isLogSync" checked>
+            <label for="isLogSync" class="form-check-label">logging synchronous</label>
           </div>
         </div>
 

@@ -1,0 +1,5 @@
+{
+  "standard.engine": "semistandard",
+  "standard.autoFixOnSave": true,
+  "standard.usePackageJson": true
+}
