@@ -31,7 +31,7 @@
   };
 
   /**
-   * Validator for ARPANET names, which much start with a letter, end with
+   * Validator for ARPANET names; start with a letter, end with
    * a letter or digit, and letters, digits, or hyphens as interior characters.
    * @param {HTMLElement} input Element containing an ARPANET name.
    */

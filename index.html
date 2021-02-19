@@ -6,18 +6,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1">
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css">
 
-    <script defer src="scripts/bootstrap.bundle.min.js"></script>
+    <!-- Script order is important! Only alter if you know what you are doing. -->
+    <script defer src="scripts/bootstrap/bootstrap.bundle.min.js"></script>
+    <script defer src="scripts/initialize.js"></script>
     <script defer src="scripts/password-visibility.js"></script>
     <script defer src="scripts/validation.js"></script>
+
+    <!-- These modules export to our namespace, order more important than ever! -->
+    <script defer src="scripts/command-blocks/classes.js"></script>
+    <script defer src="scripts/command-blocks/basic-global.js"></script>
+
+    <!-- This one uses all exports, so keep last. -->
+    <script defer src="scripts/config-generator.js"></script>
   </head>
 
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <button type="button" id="btn-generate">Generate</button>
+      </div>
+    </nav>
+
     <main>
       <form>
-        <!-- Bootstrap floating labels require input->label order and placeholder attribute -->
+        <!-- Bootstrap floating labels require input->label order and placeholder attribute. -->
 
         <div class="col-10 col-lg-4 form-section">
           <div class="form-section-header">
@@ -36,10 +51,6 @@
           <div class="mb-3 form-field form-floating">
             <input type="text" class="form-control" id="motd" placeholder>
             <label for="motd" class="form-label">banner motd</label>
-          </div>
-          <div class="mb-3 form-field form-floating">
-            <input type="text" class="form-control" id="ipDefaultGateway" placeholder>
-            <label for="ipDefaultGateway" class="form-label">ip default-gateway</label>
           </div>
           <div class="form-field form-check form-switch">
             <input type="checkbox" class="form-check-input" id="isPswEncrypted" checked>
