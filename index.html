@@ -31,41 +31,42 @@
     </nav>
 
     <main>
-      <form>
-        <!-- Bootstrap floating labels require input->label order and placeholder attribute. -->
+      <!-- Bootstrap floating labels require input->label order and placeholder attribute. -->
 
-        <div class="col-10 col-lg-4 form-section">
-          <div class="form-section-header">
-            <h3>Basic Global</h3>
-            <span class="prompt-level font-monospace">(config)#</span>
-          </div>
-          <div class="mb-3 form-field form-floating">
-            <input type="text" class="form-control" id="hostname" placeholder>
-            <label for="hostname" class="form-label">hostname</label>
-          </div>
-          <div class="mb-3 form-field form-floating">
-            <input type="password" class="form-control" id="pswenable" placeholder>
-            <label for="pswenable" class="form-label">enable secret</label>
-            <button type="button" id="pswenableButton">eye</button>
-          </div>
-          <div class="mb-3 form-field form-floating">
-            <input type="text" class="form-control" id="motd" placeholder>
-            <label for="motd" class="form-label">banner motd</label>
-          </div>
-          <div class="form-field form-check form-switch">
-            <input type="checkbox" class="form-check-input" id="isPswEncrypted" checked>
-            <label for="isPswEncrypted" class="form-check-label">service password-encryption</label>
-          </div>
-          <div class="form-field form-check form-switch">
-            <input type="checkbox" class="form-check-input" id="isNoIpLookup" checked>
-            <label for="isNoIpLookup" class="form-check-label">no ip domain lookup</label>
-          </div>
-          <div class="form-field form-check form-switch">
-            <input type="checkbox" class="form-check-input" id="isLogSync" checked>
-            <label for="isLogSync" class="form-check-label">logging synchronous</label>
-          </div>
+      <form class="col-12 col-lg-4 form-section">
+        <div class="form-section-header">
+          <h3>Basic Global</h3>
+          <span class="prompt-level font-monospace">(config)#</span>
         </div>
+        <div class="mb-3 form-field form-floating">
+          <input type="text" class="form-control" id="hostname" placeholder>
+          <label for="hostname" class="form-label">hostname</label>
+        </div>
+        <div class="mb-3 form-field form-floating">
+          <input type="password" class="form-control" id="pswenable" placeholder>
+          <label for="pswenable" class="form-label">enable secret</label>
+          <button type="button" id="pswenableButton">eye</button>
+        </div>
+        <div class="mb-3 form-field form-floating">
+          <input type="text" class="form-control" id="motd" placeholder>
+          <label for="motd" class="form-label">banner motd</label>
+        </div>
+        <div class="form-field form-check form-switch">
+          <input type="checkbox" class="form-check-input" id="isPswEncrypted" checked>
+          <label for="isPswEncrypted" class="form-check-label">service password-encryption</label>
+        </div>
+        <div class="form-field form-check form-switch">
+          <input type="checkbox" class="form-check-input" id="isNoIpLookup" checked>
+          <label for="isNoIpLookup" class="form-check-label">no ip domain-lookup</label>
+        </div>
+        <div class="form-field form-check form-switch">
+          <input type="checkbox" class="form-check-input" id="isLogSync" checked>
+          <label for="isLogSync" class="form-check-label">logging synchronous</label>
+        </div>
+      </form>
 
+      <form class="col-12 form-section">
+        <textarea id="output-text">Hello World</textarea>
       </form>
     </main>
   </body>

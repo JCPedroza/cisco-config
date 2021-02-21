@@ -4,6 +4,9 @@
 (() => {
   'use strict';
 
+  /**
+   * Groups and manages all inputs related to one single command.
+   */
   class CommandInput {
     constructor (...htmlElementIds) {
       this.htmlElements = htmlElementIds.map((id) => {
@@ -27,6 +30,8 @@
       if (!this.isRenderReady()) {
         throw new Error('CommandInput is not ready to render.');
       }
+      // TODO: input.value isn't used in checkboxes, is this the
+      // correct approach?
       return this.htmlElements.map((input) => input.value);
     }
   }

@@ -1,17 +1,23 @@
 (() => {
   'use strict';
   const basicGlobal = window.ciscoconfig.commandBlocks.basicGlobal;
+
+  const outputText = document.getElementById('output-text');
   const generateBtn = document.getElementById('btn-generate');
 
-  const configuration = [
+  const commandBlocks = [
     basicGlobal
   ];
 
   const generateConfig = () => {
-    return configuration.reduce((configRender, block) => {
+    return commandBlocks.reduce((configRender, block) => {
       return configRender + block.render() + '\n';
     }, '');
   };
 
-  generateBtn.onclick = () => console.log(generateConfig());
+  const setOutputText = () => {
+    outputText.value = generateConfig();
+  };
+
+  generateBtn.onclick = () => setOutputText();
 })();

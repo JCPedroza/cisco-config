@@ -1,12 +1,12 @@
 {
   "name": "cisco-config",
   "version": "0.0.0",
-  "description": "",
+  "description": "Configuration generator for CISCO switches and routers.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "JCPedroza",
   "license": "ISC",
   "devDependencies": {
     "semistandard": "^16.0.0"
