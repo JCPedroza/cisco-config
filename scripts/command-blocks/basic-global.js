@@ -4,35 +4,33 @@
 (() => {
   'use strict';
   const {
-    CommandInput,
     Command,
     CommandBlock
   } = window.ciscoconfig.commandBlocks.classes;
 
   const hostname = new Command(
-    new CommandInput('hostname'),
-    (name) => `hostname ${name}`
-  );
+    (name) => `hostname ${name}`,
+    'hostname');
 
   const enableSecret = new Command(
-    new CommandInput('pswenable'),
-    (password) => `enable secret ${password}`);
+    (password) => `enable secret ${password}`,
+    'pswenable');
 
   const bannerMotd = new Command(
-    new CommandInput('motd'),
-    (message) => `banner motd #${message}#`);
+    (message) => `banner motd #${message}#`,
+    'motd');
 
   const passwordEncrypt = new Command(
-    new CommandInput('isPswEncrypted'),
-    () => 'service password-encryption');
+    () => 'service password-encryption',
+    'isPswEncrypted');
 
   const noIpDomainLookup = new Command(
-    new CommandInput('isNoIpLookup'),
-    () => 'no ip domain-lookup');
+    () => 'no ip domain-lookup',
+    'isNoIpLookup');
 
   const loggingSync = new Command(
-    new CommandInput('isLogSync'),
-    () => 'logging synchronous');
+    () => 'logging synchronous',
+    'isLogSync');
 
   const basicGlobal = new CommandBlock(
     hostname,

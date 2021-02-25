@@ -27,16 +27,20 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
           <button type="button" id="btn-generate">Generate</button>
+          <button type="button" id="btn-clear">Clear</button>
+          <input type="radio" class="btn-check" name="options" id="radioIsSwitch" value="switch" checked>
+          <label for="radioIsSwitch" class="btn btn-outline-primary">Switch</label>
+          <input type="radio" class="btn-check" name="options" id="radioIsRouter" value="router">
+          <label for="radioIsRouter" class="btn btn-outline-primary">Router</label>
       </div>
     </nav>
 
     <main>
       <!-- Bootstrap floating labels require input->label order and placeholder attribute. -->
 
-      <form class="col-12 col-lg-4 form-section">
+      <form class="col-12 col-md-6 col-lg-4 form-section">
         <div class="form-section-header">
           <h3>Basic Global</h3>
-          <span class="prompt-level font-monospace">(config)#</span>
         </div>
         <div class="mb-3 form-field form-floating">
           <input type="text" class="form-control" id="hostname" placeholder>
@@ -65,8 +69,33 @@
         </div>
       </form>
 
+      <form class="col-12 col-md-6 col-lg-4 form-section">
+        <div class="form-section-header">
+          <h3>SSH</h3>
+        </div>
+        <div class="mb-3 form-field form-floating">
+          <input type="text" class="form-control" id="ipDomainName" placeholder>
+          <label for="hostname" class="form-label">ip domain-name</label>
+        </div>
+        <div class="mb-3 form-field form-floating">
+          <input type="text" class="form-control" id="localUsername" placeholder>
+          <label for="hostname" class="form-label">username * secret *</label>
+        </div>
+        <div class="mb-3 form-field form-floating">
+          <input type="password" class="form-control" id="localSecret" placeholder>
+          <label for="pswenable" class="form-label">username * secret *</label>
+          <button type="button" id="pswenableButton">eye</button>
+        </div>
+        <div class="mb-3 form-field form-floating">
+          <input type="text" class="form-control" id="cryptoBytes" placeholder>
+          <label for="hostname" class="form-label">crypto key generate rsa</label>
+        </div>
+
+
+      </form>
+
       <form class="col-12 form-section">
-        <textarea id="output-text">Hello World</textarea>
+        <textarea id="output-text" readonly>Hello World</textarea>
       </form>
     </main>
   </body>

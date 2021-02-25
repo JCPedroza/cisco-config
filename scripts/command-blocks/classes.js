@@ -37,8 +37,8 @@
   }
 
   class Command {
-    constructor (commandInput, templateFunction) {
-      this.commandInput = commandInput;
+    constructor (templateFunction, ...htmlElementIds) {
+      this.commandInput = new CommandInput(...htmlElementIds);
       this.templateFunction = templateFunction;
     }
 
@@ -70,7 +70,6 @@
   }
 
   window.ciscoconfig.commandBlocks.classes = {
-    CommandInput,
     Command,
     CommandBlock
   };
