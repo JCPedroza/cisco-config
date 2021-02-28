@@ -11,15 +11,14 @@
     basicGlobal
   ];
 
-  const getRadioIsDevice = () => {
+  const deviceType = () => {
     const selected = document.querySelector('input[name="options"]:checked');
     return selected.value;
   };
 
   const generateConfig = () => {
-    return commandBlocks.reduce((configRender, block) => {
-      return configRender + block.render() + '\n';
-    }, '');
+    const reducer = (tail, block) => tail + block.render(deviceType()) + '\n';
+    return commandBlocks.reduce(reducer, '');
   };
 
   const setOutputText = () => {
@@ -27,7 +26,6 @@
   };
 
   const clearOutputText = () => {
-    console.log(getRadioIsDevice());  // debug
     outputText.value = '';
   };
 

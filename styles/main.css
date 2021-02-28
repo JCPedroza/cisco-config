@@ -1,3 +1,9 @@
+textarea {
+  width: 100%;
+  height: 30rem;
+  resize: none;
+}
+
 .form-section {
   border: 1px solid black;
 }
