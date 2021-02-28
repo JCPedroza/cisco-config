@@ -18,6 +18,7 @@
     <!-- These modules export to our namespace, order more important than ever! -->
     <script defer src="scripts/command-blocks/classes.js"></script>
     <script defer src="scripts/command-blocks/basic-global.js"></script>
+    <script defer src="scripts/command-blocks/ssh.js"></script>
 
     <!-- This one uses all exports, so keep last. -->
     <script defer src="scripts/config-generator.js"></script>
@@ -37,69 +38,79 @@
 
     <main>
       <!-- Bootstrap floating labels require input->label order and placeholder attribute. -->
+      <div class="container">
+        <div class="row">
 
-      <div class="container"><div class="row">
-      <form class="col-12 col-md-6 col-lg-4 form-section">
-        <div class="form-section-header">
-          <h3>Basic Global</h3>
-        </div>
-        <div class="mb-3 form-field form-floating">
-          <input type="text" class="form-control" id="hostname" placeholder>
-          <label for="hostname" class="form-label">hostname</label>
-        </div>
-        <div class="mb-3 form-field form-floating">
-          <input type="password" class="form-control" id="pswenable" placeholder>
-          <label for="pswenable" class="form-label">enable secret</label>
-          <button type="button" id="pswenableButton">eye</button>
-        </div>
-        <div class="mb-3 form-field form-floating">
-          <input type="text" class="form-control" id="motd" placeholder>
-          <label for="motd" class="form-label">banner motd</label>
-        </div>
-        <div class="form-field form-check form-switch">
-          <input type="checkbox" class="form-check-input" id="isPswEncrypted" checked>
-          <label for="isPswEncrypted" class="form-check-label">service password-encryption</label>
-        </div>
-        <div class="form-field form-check form-switch">
-          <input type="checkbox" class="form-check-input" id="isNoIpLookup" checked>
-          <label for="isNoIpLookup" class="form-check-label">no ip domain-lookup</label>
-        </div>
-        <div class="form-field form-check form-switch">
-          <input type="checkbox" class="form-check-input" id="isLogSync" checked>
-          <label for="isLogSync" class="form-check-label">logging synchronous</label>
-        </div>
-      </form>
+          <!-- Block for basic global configuration. -->
+          <form class="col-12 col-md-6 col-lg-4 form-section">
+            <div class="form-section-header">
+              <h3>Basic Global</h3>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="hostname" placeholder>
+              <label for="hostname" class="form-label">hostname</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="password" class="form-control" id="pswenable" placeholder>
+              <label for="pswenable" class="form-label">enable secret</label>
+              <button type="button" id="pswenableButton">eye</button>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="motd" placeholder>
+              <label for="motd" class="form-label">banner motd</label>
+            </div>
+            <div class="form-field form-check form-switch">
+              <input type="checkbox" class="form-check-input" id="isPswEncrypted" checked>
+              <label for="isPswEncrypted" class="form-check-label">service password-encryption</label>
+            </div>
+            <div class="form-field form-check form-switch">
+              <input type="checkbox" class="form-check-input" id="isNoIpLookup" checked>
+              <label for="isNoIpLookup" class="form-check-label">no ip domain-lookup</label>
+            </div>
+            <div class="form-field form-check form-switch">
+              <input type="checkbox" class="form-check-input" id="isLogSync" checked>
+              <label for="isLogSync" class="form-check-label">logging synchronous</label>
+            </div>
+          </form>
 
-      <form class="col-12 col-md-6 col-lg-4 form-section">
-        <div class="form-section-header">
-          <h3>SSH</h3>
-        </div>
-        <div class="mb-3 form-field form-floating">
-          <input type="text" class="form-control" id="ipDomainName" placeholder>
-          <label for="hostname" class="form-label">ip domain-name</label>
-        </div>
-        <div class="mb-3 form-field form-floating">
-          <input type="text" class="form-control" id="localUsername" placeholder>
-          <label for="hostname" class="form-label">username * secret *</label>
-        </div>
-        <div class="mb-3 form-field form-floating">
-          <input type="password" class="form-control" id="localSecret" placeholder>
-          <label for="pswenable" class="form-label">username * secret *</label>
-          <button type="button" id="pswenableButton">eye</button>
-        </div>
-        <div class="mb-3 form-field form-floating">
-          <input type="text" class="form-control" id="cryptoBytes" placeholder>
-          <label for="hostname" class="form-label">crypto key generate rsa</label>
-        </div>
+          <!-- Block for SSH configuration. -->
+          <form class="col-12 col-md-6 col-lg-4 form-section">
+            <div class="form-section-header">
+              <h3>SSH</h3>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="ipDomainName" placeholder>
+              <label for="hostname" class="form-label">ip domain-name</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="localUsername" placeholder>
+              <label for="hostname" class="form-label">username * secret *</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="password" class="form-control" id="localSecret" placeholder>
+              <label for="pswenable" class="form-label">username * secret *</label>
+              <button type="button" id="localSecretButton">eye</button>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="cryptoBytes" placeholder>
+              <label for="hostname" class="form-label">crypto key generate rsa</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="sshFromPort" placeholder>
+              <label for="sshFromPort" class="form-label">from port</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="sshToPort" placeholder>
+              <label for="sshToPort" class="form-label">to port</label>
+            </div>
+          </form>
 
+          <form class="col-12 form-section">
+            <textarea id="output-text" class="font-monospace" readonly></textarea>
+          </form>
 
-      </form>
-
-      <form class="col-12 form-section">
-        <textarea id="output-text" class="font-monospace" readonly>Hello World</textarea>
-      </form>
-
-      </div></div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

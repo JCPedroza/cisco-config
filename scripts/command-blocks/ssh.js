@@ -28,7 +28,7 @@
     (fromPort, toPort) => {
       const ports = `line vty ${fromPort} ${toPort}`;
       const rest = '\nlogin local\ntransport input ssh';
-      return `${ports}${rest}exit`;
+      return `${ports}${rest}\nexit`;
     },
     'sshFromPort',
     'sshToPort'
@@ -40,6 +40,5 @@
     cryptoGenerate,
     lineVtySsh
   );
-
   window.ciscoconfig.commandBlocks.ssh = ssh;
 })();

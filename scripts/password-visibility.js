@@ -6,10 +6,13 @@
 
   const pswenable = document.getElementById('pswenable');
   const pswenableButton = document.getElementById('pswenableButton');
+  const localSecret = document.getElementById('localSecret');
+  const pswSshButton = document.getElementById('localSecretButton');
 
-  // The given button will affect the paired input.
+  // Button will affect the paired input.
   const inputButtonPairs = [
-    { input: pswenable, button: pswenableButton }
+    { button: pswenableButton, input: pswenable },
+    { button: pswSshButton, input: localSecret }
   ];
 
   /**

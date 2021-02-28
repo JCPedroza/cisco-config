@@ -8,7 +8,8 @@
   const outputText = document.getElementById('output-text');
 
   const commandBlocks = [
-    basicGlobal
+    basicGlobal,
+    ssh
   ];
 
   const deviceType = () => {
