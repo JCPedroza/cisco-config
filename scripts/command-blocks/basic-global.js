@@ -22,15 +22,15 @@
 
   const passwordEncrypt = new Command(
     () => 'service password-encryption',
-    'isPswEncrypted');
+    'is-psw-encrypted');
 
   const noIpDomainLookup = new Command(
     () => 'no ip domain-lookup',
-    'isNoIpLookup');
+    'is-noip-lookup');
 
   const loggingSync = new Command(
     () => 'logging synchronous',
-    'isLogSync');
+    'is-log-sync');
 
   const basicGlobal = new CommandBlock(
     hostname,

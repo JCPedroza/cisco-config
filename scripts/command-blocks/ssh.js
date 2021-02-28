@@ -10,18 +10,18 @@
 
   const domainName = new Command(
     (name) => `ip domain-name ${name}`,
-    'ipDomainName'
+    'ip-domain-name'
   );
 
   const localUserSecret = new Command(
     (name, secret) => `username ${name} secret ${secret}`,
-    'localUsername',
-    'localSecret'
+    'local-username',
+    'local-secret'
   );
 
   const cryptoGenerate = new Command(
     (bytes) => `crypto key generate rsa\n${bytes}`,
-    'cryptoBytes'
+    'crypto-bytes'
   );
 
   const lineVtySsh = new Command(
@@ -30,8 +30,8 @@
       const rest = '\nlogin local\ntransport input ssh';
       return `${ports}${rest}\nexit`;
     },
-    'sshFromPort',
-    'sshToPort'
+    'ssh-from-port',
+    'ssh-to-port'
   );
 
   const ssh = new CommandBlock(

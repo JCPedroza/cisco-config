@@ -25,19 +25,20 @@
   </head>
 
   <body>
+    <!-- Top bar. -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
           <button type="button" id="btn-generate">Generate</button>
           <button type="button" id="btn-clear">Clear</button>
-          <input type="radio" class="btn-check" name="options" id="radioIsSwitch" value="switch" checked>
-          <label for="radioIsSwitch" class="btn btn-outline-primary">Switch</label>
-          <input type="radio" class="btn-check" name="options" id="radioIsRouter" value="router">
-          <label for="radioIsRouter" class="btn btn-outline-primary">Router</label>
+          <input type="radio" class="btn-check" name="options" id="rad-isswitch" value="switch" checked>
+          <label for="rad-isswitch" class="btn btn-outline-primary">Switch</label>
+          <input type="radio" class="btn-check" name="options" id="rad-isrouter" value="router">
+          <label for="rad-isrouter" class="btn btn-outline-primary">Router</label>
       </div>
     </nav>
 
     <main>
-      <!-- Bootstrap floating labels require input->label order and placeholder attribute. -->
+      <!-- Bootstrap floating labels require label after input, and placeholder attribute. -->
       <div class="container">
         <div class="row">
 
@@ -53,23 +54,23 @@
             <div class="mb-3 form-field form-floating">
               <input type="password" class="form-control" id="pswenable" placeholder>
               <label for="pswenable" class="form-label">enable secret</label>
-              <button type="button" id="pswenableButton">eye</button>
+              <button type="button" id="btn-pswenable">eye</button>
             </div>
             <div class="mb-3 form-field form-floating">
               <input type="text" class="form-control" id="motd" placeholder>
               <label for="motd" class="form-label">banner motd</label>
             </div>
             <div class="form-field form-check form-switch">
-              <input type="checkbox" class="form-check-input" id="isPswEncrypted" checked>
-              <label for="isPswEncrypted" class="form-check-label">service password-encryption</label>
+              <input type="checkbox" class="form-check-input" id="is-psw-encrypted" checked>
+              <label for="is-psw-encrypted" class="form-check-label">service password-encryption</label>
             </div>
             <div class="form-field form-check form-switch">
-              <input type="checkbox" class="form-check-input" id="isNoIpLookup" checked>
-              <label for="isNoIpLookup" class="form-check-label">no ip domain-lookup</label>
+              <input type="checkbox" class="form-check-input" id="is-noip-lookup" checked>
+              <label for="is-noip-lookup" class="form-check-label">no ip domain-lookup</label>
             </div>
             <div class="form-field form-check form-switch">
-              <input type="checkbox" class="form-check-input" id="isLogSync" checked>
-              <label for="isLogSync" class="form-check-label">logging synchronous</label>
+              <input type="checkbox" class="form-check-input" id="is-log-sync" checked>
+              <label for="is-log-sync" class="form-check-label">logging synchronous</label>
             </div>
           </form>
 
@@ -79,32 +80,33 @@
               <h3>SSH</h3>
             </div>
             <div class="mb-3 form-field form-floating">
-              <input type="text" class="form-control" id="ipDomainName" placeholder>
-              <label for="hostname" class="form-label">ip domain-name</label>
+              <input type="text" class="form-control" id="ip-domain-name" placeholder>
+              <label for="ip-domain-name" class="form-label">ip domain-name</label>
             </div>
             <div class="mb-3 form-field form-floating">
-              <input type="text" class="form-control" id="localUsername" placeholder>
-              <label for="hostname" class="form-label">username * secret *</label>
+              <input type="text" class="form-control" id="local-username" placeholder>
+              <label for="local-username" class="form-label">username * secret *</label>
             </div>
             <div class="mb-3 form-field form-floating">
-              <input type="password" class="form-control" id="localSecret" placeholder>
-              <label for="pswenable" class="form-label">username * secret *</label>
-              <button type="button" id="localSecretButton">eye</button>
+              <input type="password" class="form-control" id="local-secret" placeholder>
+              <label for="local-secret" class="form-label">username * secret *</label>
+              <button type="button" id="btn-local-secret">eye</button>
             </div>
             <div class="mb-3 form-field form-floating">
-              <input type="text" class="form-control" id="cryptoBytes" placeholder>
-              <label for="hostname" class="form-label">crypto key generate rsa</label>
+              <input type="text" class="form-control" id="crypto-bytes" placeholder>
+              <label for="crypto-bytes" class="form-label">crypto key generate rsa</label>
             </div>
             <div class="mb-3 form-field form-floating">
-              <input type="text" class="form-control" id="sshFromPort" placeholder>
-              <label for="sshFromPort" class="form-label">from port</label>
+              <input type="text" class="form-control" id="ssh-from-port" placeholder>
+              <label for="ssh-from-port" class="form-label">from port</label>
             </div>
             <div class="mb-3 form-field form-floating">
-              <input type="text" class="form-control" id="sshToPort" placeholder>
-              <label for="sshToPort" class="form-label">to port</label>
+              <input type="text" class="form-control" id="ssh-to-port" placeholder>
+              <label for="ssh-to-port" class="form-label">to port</label>
             </div>
           </form>
 
+          <!-- Configuration text output. -->
           <form class="col-12 form-section">
             <textarea id="output-text" class="font-monospace" readonly></textarea>
           </form>

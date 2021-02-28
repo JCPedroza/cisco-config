@@ -5,9 +5,9 @@
   'use strict';
 
   const pswenable = document.getElementById('pswenable');
-  const pswenableButton = document.getElementById('pswenableButton');
-  const localSecret = document.getElementById('localSecret');
-  const pswSshButton = document.getElementById('localSecretButton');
+  const pswenableButton = document.getElementById('btn-pswenable');
+  const localSecret = document.getElementById('local-secret');
+  const pswSshButton = document.getElementById('btn-local-secret');
 
   // Button will affect the paired input.
   const inputButtonPairs = [
