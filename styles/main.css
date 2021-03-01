@@ -9,6 +9,10 @@ textarea {
   resize: none;
 }
 
+h3 {
+  display: inline;
+}
+
 .form-section {
   border: 1px solid black;
 }
@@ -22,4 +26,8 @@ textarea {
 .form-field {
   display: flex;
   flex-direction: row;
+}
+
+.form-check-inline {
+  float: right;
 }

@@ -15,6 +15,7 @@
     <script defer src="scripts/bootstrap/bootstrap.bundle.min.js"></script>
     <script defer src="scripts/initialize.js"></script>
     <script defer src="scripts/password-visibility.js"></script>
+    <script defer src="scripts/block-activation.js"></script>
     <script defer src="scripts/validation.js"></script>
 
     <!-- These modules export to our namespace, order more important than ever! -->
@@ -41,14 +42,17 @@
     </nav>
 
     <main>
-      <!-- Bootstrap floating labels require label after input, and placeholder attribute. -->
+      <!-- Bootstrap floating labels require putting label after input, and including placeholder attribute. -->
       <div class="container">
         <div class="row">
 
           <!-- Block for basic global configuration. -->
-          <form class="col-12 col-md-6 col-lg-4 form-section">
+          <form class="col-12 col-md-6 col-lg-4 form-section" id="blk-basic-global">
             <div class="form-section-header">
               <h3>Basic Global</h3>
+              <span class="form-check-inline form-switch">
+                <input type="checkbox" class="form-check-input" id="swt-basic-global" checked>
+              </span>
             </div>
             <div class="mb-3 form-field form-floating">
               <input type="text" class="form-control" id="hostname" placeholder>

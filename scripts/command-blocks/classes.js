@@ -25,7 +25,11 @@
         } else if (elem.type === 'checkbox') {
           isReady = elem.checked;
         }
-        return isReady;
+
+        // this can be simplified
+        const isDisabled = elem.disabled ? elem.disabled : false;
+
+        return isReady && !isDisabled;
       });
     }
 
