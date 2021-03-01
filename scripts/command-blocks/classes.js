@@ -15,6 +15,9 @@
     }
 
     isRenderReady () {
+      if (!this.htmlElements) {
+        return true;
+      }
       return this.htmlElements.every((elem) => {
         let isReady;
         if (elem.type === 'text' || elem.type === 'password') {

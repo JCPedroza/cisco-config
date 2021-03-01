@@ -18,7 +18,7 @@
   };
 
   const generateConfig = () => {
-    const reducer = (tail, block) => tail + block.render(deviceType()) + '\n';
+    const reducer = (tail, block) => tail + block.render() + '\n';
     return commandBlocks.reduce(reducer, '');
   };
 

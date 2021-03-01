@@ -3,10 +3,16 @@
  */
 (() => {
   'use strict';
+  const { deviceType } = window.ciscoconfig.utils;
   const {
     Command,
     CommandBlock
   } = window.ciscoconfig.commandBlocks.classes;
+
+  const lastVtyPort = {
+    switch: 15,
+    router: 4
+  };
 
   const domainName = new Command(
     (name) => `ip domain-name ${name}`,
@@ -25,13 +31,12 @@
   );
 
   const lineVtySsh = new Command(
-    (fromPort, toPort) => {
-      const ports = `line vty ${fromPort} ${toPort}`;
+    () => {
+      const lastPort = lastVtyPort[deviceType()];
+      const ports = `line vty 0 ${lastPort}`;
       const rest = '\nlogin local\ntransport input ssh';
       return `${ports}${rest}\nexit`;
-    },
-    'ssh-from-port',
-    'ssh-to-port'
+    }
   );
 
   const ssh = new CommandBlock(
