@@ -20,12 +20,14 @@
    * @param {HTMLElement} pswInput - Input element to affect.
    * @returns {function} Input type switcher.
    */
-  const revealPsw = (pswInput) => {
+  const revealPsw = (pswInput, pswButton) => {
     return () => {
       if (pswInput.type === 'password') {
         pswInput.type = 'text';
+        pswButton.children[0].className = 'bi bi-eye-slash';
       } else {
         pswInput.type = 'password';
+        pswButton.children[0].className = 'bi bi-eye';
       }
     };
   };
@@ -36,7 +38,7 @@
    * @param {HTMLElement} pswButton - Button to bind the listener to.
    */
   const bindPswListener = (pswInput, pswButton) => {
-    pswButton.onclick = revealPsw(pswInput);
+    pswButton.onclick = revealPsw(pswInput, pswButton);
   };
 
   // Create all listeners and bind them with their respective buttons.

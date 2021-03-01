@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles/main.css">
 
-    <!-- Script order is important! Only alter if you know what you are doing. -->
+    <!-- Scripts, order is important! Only alter if you know what you are doing. -->
     <script defer src="scripts/bootstrap/bootstrap.bundle.min.js"></script>
     <script defer src="scripts/initialize.js"></script>
     <script defer src="scripts/password-visibility.js"></script>
@@ -29,8 +31,8 @@
     <!-- Top bar. -->
     <nav class="navbar navbar-default bg-light fixed-top">
       <div class="container">
-          <button type="button" id="btn-generate">Generate</button>
-          <button type="button" id="btn-clear">Clear</button>
+          <button type="button" class="btn btn-primary" id="btn-generate">Generate</button>
+          <button type="button" class="btn btn-primary" id="btn-clear">Clear</button>
           <input type="radio" class="btn-check" name="options" id="rad-isswitch" value="switch" checked>
           <label for="rad-isswitch" class="btn btn-outline-primary">Switch</label>
           <input type="radio" class="btn-check" name="options" id="rad-isrouter" value="router">
@@ -55,7 +57,9 @@
             <div class="mb-3 form-field form-floating">
               <input type="password" class="form-control" id="pswenable" placeholder>
               <label for="pswenable" class="form-label">enable secret</label>
-              <button type="button" id="btn-pswenable">eye</button>
+              <button type="button" class="btn btn-light" id="btn-pswenable">
+                <i class="bi bi-eye"></i>
+              </button>
             </div>
             <div class="mb-3 form-field form-floating">
               <input type="text" class="form-control" id="motd" placeholder>
@@ -91,7 +95,9 @@
             <div class="mb-3 form-field form-floating">
               <input type="password" class="form-control" id="local-secret" placeholder>
               <label for="local-secret" class="form-label">username * secret *</label>
-              <button type="button" id="btn-local-secret">eye</button>
+              <button type="button" class="btn btn-light" id="btn-local-secret">
+                <i class="bi bi-eye"></i>
+              </button>
             </div>
             <div class="mb-3 form-field form-floating">
               <input type="text" class="form-control" id="crypto-bytes" placeholder>
