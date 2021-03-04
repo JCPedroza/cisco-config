@@ -13,14 +13,22 @@ h3 {
   display: inline;
 }
 
-.form-section {
-  border: 1px solid black;
+/* Overriding Bootstrap's blue glow. */
+.form-control:focus {
+  border: 2px solid black;
+  box-shadow: none;
 }
 
-.form-section-header {
+.code-block {
+  margin: 1rem 0;
+}
+
+.code-block-header {
   background-color: black;
   color: white;
   padding: 0 0.25rem;
+  margin-bottom: 1rem;
+  user-select: none;
 }
 
 .form-field {

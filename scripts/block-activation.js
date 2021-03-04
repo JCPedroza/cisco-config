@@ -27,4 +27,15 @@
   blockSwitchPairs.forEach((pair) => {
     pair.switch.onclick = switchDisabled(pair.switch, pair.block);
   });
+
+  // Double click deactivates block
+  // Make this more readable
+  [...document.getElementsByClassName('code-block-header')]
+    .forEach((block) => {
+      block.addEventListener('dblclick', () => {
+        const region = [...block.getElementsByClassName('form-switch')][0];
+        const swt = region.getElementsByClassName('form-check-input')[0];
+        swt.click();
+      });
+    });
 })();
