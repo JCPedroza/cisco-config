@@ -15,6 +15,7 @@
     }
 
     isRenderReady () {
+      // This needs to be changed for validation
       if (!this.htmlElements) {
         return true;
       }
@@ -26,7 +27,6 @@
           isReady = elem.checked;
         }
 
-        // this can be simplified
         const isDisabled = elem.disabled ? elem.disabled : false;
 
         return isReady && !isDisabled;

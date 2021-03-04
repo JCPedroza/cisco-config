@@ -12,11 +12,6 @@
     ssh
   ];
 
-  const deviceType = () => {
-    const selected = document.querySelector('input[name="options"]:checked');
-    return selected.value;
-  };
-
   const generateConfig = () => {
     const reducer = (tail, block) => tail + block.render() + '\n';
     return commandBlocks.reduce(reducer, '');

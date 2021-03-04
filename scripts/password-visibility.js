@@ -10,7 +10,7 @@
   const pswSshButton = document.getElementById('btn-local-secret');
 
   // Button will affect the paired input.
-  const inputButtonPairs = [
+  const buttonInputPairs = [
     { button: pswenableButton, input: pswenable },
     { button: pswSshButton, input: localSecret }
   ];
@@ -42,5 +42,5 @@
   };
 
   // Create all listeners and bind them with their respective buttons.
-  inputButtonPairs.forEach((pair) => bindPswListener(pair.input, pair.button));
+  buttonInputPairs.forEach((pair) => bindPswListener(pair.input, pair.button));
 })();
