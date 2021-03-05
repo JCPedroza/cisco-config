@@ -61,18 +61,23 @@
   }
 
   class CommandBlock {
-    constructor (...commands) {
+    constructor (switchId, ...commands) {
+      this.switch = document.getElementById(switchId);
       this.commands = commands;
     }
 
     render () {
-      return this.commands.reduce((blockRender, command) => {
-        let commandRender = command.render();
-        if (commandRender) {
-          commandRender += '\n';
-        }
-        return blockRender + commandRender;
-      }, '');
+      if (this.switch.checked) {
+        return this.commands.reduce((blockRender, command) => {
+          let commandRender = command.render();
+          if (commandRender) {
+            commandRender += '\n';
+          }
+          return blockRender + commandRender;
+        }, '');
+      } else {
+        return '';
+      }
     }
   }
 

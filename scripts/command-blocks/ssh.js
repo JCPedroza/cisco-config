@@ -40,6 +40,7 @@
   );
 
   const ssh = new CommandBlock(
+    'swt-ssh',
     domainName,
     localUserSecret,
     cryptoGenerate,

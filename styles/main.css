@@ -1,5 +1,5 @@
 body {
-  /* Padding for fixed top bar. */
+  /* Padding needed for fixed top bar. */
   padding-top: 4rem;
 }
 
@@ -26,7 +26,7 @@ h3 {
 .code-block-header {
   background-color: black;
   color: white;
-  padding: 0 0.25rem;
+  padding: 0.25rem 0.5rem;
   margin-bottom: 1rem;
   user-select: none;
 }
@@ -38,4 +38,8 @@ h3 {
 
 .form-check-inline {
   float: right;
+}
+
+.form-check-label {
+  margin-left: 0.5rem;
 }

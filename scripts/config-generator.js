@@ -2,6 +2,7 @@
   'use strict';
   const basicGlobal = window.ciscoconfig.commandBlocks.basicGlobal;
   const ssh = window.ciscoconfig.commandBlocks.ssh;
+  const consoleConfig = window.ciscoconfig.commandBlocks.consoleConfig;
 
   const generateBtn = document.getElementById('btn-generate');
   const clearBtn = document.getElementById('btn-clear');
@@ -9,11 +10,16 @@
 
   const commandBlocks = [
     basicGlobal,
-    ssh
+    ssh,
+    consoleConfig
   ];
 
   const generateConfig = () => {
-    const reducer = (tail, block) => tail + block.render() + '\n';
+    const reducer = (tail, block) => {
+      let blockRender = block.render();
+      if (blockRender) blockRender += '\n';
+      return tail + blockRender;
+    };
     return commandBlocks.reduce(reducer, '');
   };
 

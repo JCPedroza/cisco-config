@@ -33,6 +33,7 @@
     'is-log-sync');
 
   const basicGlobal = new CommandBlock(
+    'swt-basic-global',
     hostname,
     enableSecret,
     bannerMotd,

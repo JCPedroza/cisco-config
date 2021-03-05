@@ -4,10 +4,13 @@
   const swtBasicGlobal = document.getElementById('swt-basic-global');
   const blkSsh = document.getElementById('blk-ssh');
   const swtSsh = document.getElementById('swt-ssh');
+  const blkConsole = document.getElementById('blk-console');
+  const swtConsole = document.getElementById('swt-console');
 
   const blockSwitchPairs = [
     { block: blkBasicGlobal, switch: swtBasicGlobal },
-    { block: blkSsh, switch: swtSsh }
+    { block: blkSsh, switch: swtSsh },
+    { block: blkConsole, switch: swtConsole }
   ];
 
   // Make this more readable
