@@ -3,7 +3,6 @@
  */
 (() => {
   'use strict';
-
   const pswenable = document.getElementById('pswenable');
   const pswenableButton = document.getElementById('btn-pswenable');
   const localSecret = document.getElementById('local-secret');

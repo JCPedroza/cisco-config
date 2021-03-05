@@ -16,6 +16,7 @@
     <script defer src="scripts/initialize.js"></script>
     <script defer src="scripts/password-visibility.js"></script>
     <script defer src="scripts/block-activation.js"></script>
+    <script defer src="scripts/block-visibility.js"></script>
     <script defer src="scripts/validation.js"></script>
 
     <!-- These modules export to our namespace, order more important than ever! -->
@@ -127,6 +128,40 @@
               <button type="button" class="btn btn-light" id="btn-psw-console">
                 <i class="bi bi-eye"></i>
               </button>
+            </div>
+          </form>
+
+           <!-- Block for DHCP configuration. -->
+           <form class="col-12 col-md-6 col-lg-4 code-block device-router" id="blk-dhcp">
+            <div class="code-block-header">
+              <h3>DHCP</h3>
+              <div class="form-check-inline form-switch">
+                <input type="checkbox" class="form-check-input" id="swt-dhcp" checked>
+              </div>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="dhcp-excluded-from" placeholder>
+              <label for="ip-domain-name" class="form-label">ip dhcp excluded-address (from)</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="dhcp-excluded-to" placeholder>
+              <label for="ip-domain-name" class="form-label">ip dhcp excluded-address (to)</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="dhcp-pool" placeholder>
+              <label for="ip-domain-name" class="form-label">ip dhcp pool *</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="dhcp-network-ip" placeholder>
+              <label for="ip-domain-name" class="form-label">network (ip)</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="dhcp-network-mask" placeholder>
+              <label for="ip-domain-name" class="form-label">network (mask)</label>
+            </div>
+            <div class="mb-3 form-field form-floating">
+              <input type="text" class="form-control" id="dhcp-default-router" placeholder>
+              <label for="ip-domain-name" class="form-label">default-router *</label>
             </div>
           </form>
 
